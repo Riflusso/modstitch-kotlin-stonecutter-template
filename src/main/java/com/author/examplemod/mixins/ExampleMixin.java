@@ -1,4 +1,4 @@
-package com.author.examplemod.mixin;
+package com.author.examplemod.mixins;
 
 import com.author.examplemod.ExampleMod;
 import net.minecraft.client.gui.components.Button;
