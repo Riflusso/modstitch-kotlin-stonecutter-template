@@ -2,7 +2,7 @@
 
 This repository provides a **multi-loader Minecraft mod development template written in Kotlin**, designed for use with the **Modstitch** and **Stonecutter** Gradle plugins. It supports **Fabric**, **Forge**, and **NeoForge** targets across multiple Minecraft versions
 
-> 🛠️ **Based on**: [modunion/modstitch-stonecutter-template](https://github.com/modunion/modstitch-stonecutter-template) — then modified to ensure it builds and runs successfully
+> 🛠️ **Based on**: [isXander/modstitch-stonecutter-template](https://github.com/isXander/modstitch-stonecutter-template) — then modified to ensure it builds and runs successfully
 
 ## 🚀 Features
 
@@ -105,6 +105,6 @@ ExampleMod/
 - [NeoForge Documentation](https://docs.neoforged.net/)
 - [Forge Documentation](https://docs.minecraftforge.net/)
 - [Stonecutter Documentation](https://stonecutter.kikugie.dev/)
-- [Modstitch Documentation](https://modunion.github.io/modstitch-docs/)
+- [Modstitch Documentation](https://isXander.github.io/modstitch-docs/)
 - [KotlinForForge](https://github.com/TheDarkColour/KotlinForForge)
 - [Fabric Language Kotlin](https://github.com/FabricMC/fabric-language-kotlin)
