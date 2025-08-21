@@ -4,7 +4,7 @@ plugins {
 
     id("dev.kikugie.stonecutter")
 
-    val modstitchVersion = "0.5.16-unstable"
+    val modstitchVersion = "0.7.0-unstable"
     id("dev.isxander.modstitch.base") version modstitchVersion apply false
     id("dev.isxander.modstitch.shadow") version modstitchVersion apply false
 }

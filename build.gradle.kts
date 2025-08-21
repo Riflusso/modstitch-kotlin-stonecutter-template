@@ -33,11 +33,11 @@ val resolvedModId = resolveProp("modId") ?: error("modId is required")
 // ========== ModStitch Setup ==========
 modstitch {
     minecraftVersion = mcVersion
-    javaTarget = javaTargetVersion
+    javaVersion = javaTargetVersion
 
     kotlin {
-        jvmToolchain(javaTarget.get())
-        compilerOptions.jvmTarget.set(JvmTarget.fromTarget(javaTarget.get().toString()))
+        jvmToolchain(javaVersion.get())
+        compilerOptions.jvmTarget.set(JvmTarget.fromTarget(javaVersion.get().toString()))
     }
 
     parchment {
@@ -79,20 +79,20 @@ modstitch {
     }
 
     moddevgradle {
-        enable {
-            resolveProp("deps.neoforge")?.let { neoForgeVersion = it }
-            resolveProp("deps.forge")?.let { forgeVersion = it }
-        }
+        resolveProp("deps.neoforge")?.let { neoForgeVersion = it }
+        resolveProp("deps.forge")?.let { forgeVersion = it }
         defaultRuns()
 
-        configureNeoforge {
+        configureNeoForge {
             runs.all {
                 jvmArguments.add("-Dmixin.debug.export=true")
             }
         }
 
-        tasks.named("createMinecraftArtifacts") {
-            dependsOn("stonecutterGenerate")
+        modstitch.onEnable {
+            tasks.named("createMinecraftArtifacts") {
+                dependsOn("stonecutterGenerate")
+            }
         }
     }
 
@@ -139,7 +139,7 @@ dependencies {
 tasks {
     withType<KotlinCompile>().configureEach {
         compilerOptions {
-            jvmTarget = modstitch.javaTarget.map { JvmTarget.fromTarget(it.toString()) }
+            jvmTarget = modstitch.javaVersion.map { JvmTarget.fromTarget(it.toString()) }
         }
         dependsOn("stonecutterGenerate")
     }
