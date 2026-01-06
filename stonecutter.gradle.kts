@@ -4,9 +4,8 @@ plugins {
 
     id("dev.kikugie.stonecutter")
 
-    val modstitchVersion = "0.7.0-unstable"
+    val modstitchVersion = "0.8.4"
     id("dev.isxander.modstitch.base") version modstitchVersion apply false
-    id("dev.isxander.modstitch.shadow") version modstitchVersion apply false
 }
 stonecutter active "1.21.1-fabric"
 
